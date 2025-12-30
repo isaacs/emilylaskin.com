@@ -19,6 +19,16 @@ export default async function(eleventyConfig) {
 		}
 	});
 
+	eleventyConfig.addNunjucksFilter("postPermalink", (slug, page) => {
+		const { date, fileSlug } = page;
+		if (!slug) slug = fileSlug;
+		const p = Date.parse(date);
+		if (!p) return `/${slug}`;
+		const d = new Date(p);
+		const m = String(d.getUTCMonth() + 1).padStart(2, '0');
+		return `/${d.getUTCFullYear()}/${m}/${slug}`;
+	});
+
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig

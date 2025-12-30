@@ -1,4 +1,5 @@
 ---
+permalink: "{{ slug | postPermalink(page) }}/index.html"
 layout: layouts/base.njk
 ---
 {# Only include the syntax highlighter CSS on blog posts, included with the CSS per-page bundle #}
