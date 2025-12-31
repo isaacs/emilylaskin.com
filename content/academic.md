@@ -1,4 +1,4 @@
----js
+---
 eleventyNavigation:
   key: "Academic Work"
   order: 4
