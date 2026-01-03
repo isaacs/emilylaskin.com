@@ -2,10 +2,8 @@
 :root {
 	--font-family: -apple-system, system-ui, sans-serif;
 	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
-}
+	--column-width: 60em;
 
-/* Theme colors */
-:root {
 	--color-gray-20: #e0e0e0;
 	--color-gray-50: #C0C0C0;
 	--color-gray-90: #333;
@@ -18,6 +16,12 @@
 	--text-color-link-visited: #17050F;
 
 	--syntax-tab-size: 2;
+}
+
+@media (max-width: 66em) {
+	:root {
+		--column-width: 90%;
+	}
 }
 
 @media (prefers-color-scheme: dark) {
@@ -57,7 +61,7 @@ html {
 	overflow-y: scroll;
 }
 body {
-	max-width: 40em;
+	max-width: var(--column-width);
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -202,7 +206,7 @@ header {
 }
 .home-link {
 	flex-grow: 1;
-	font-size: 1em; /* 16px /16 */
+	font-size: 2em; /* 16px /16 */
 	font-weight: 700;
 }
 .home-link:link:not(:hover) {
@@ -296,3 +300,6 @@ header {
 	margin-right: 1em;
 }
 
+.ha-placeholder {
+	opacity: 0!important;
+}
