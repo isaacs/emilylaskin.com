@@ -303,3 +303,10 @@ header {
 .ha-placeholder {
 	opacity: 0!important;
 }
+.headshot img {
+	float: right;
+	max-width: 30%;
+	box-shadow: 0 0 15px #080;
+	border-radius: 10px;
+	border: 1px solid #8f0;
+}
